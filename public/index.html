@@ -19,51 +19,45 @@
     <hr>
     <main class="container-fluid">
         <div class="container">
-            <h2>Routes</h2>
+            <h2 class="text-decoration-underline">Cars Routes</h2>
             <div style="overflow-x: auto;">
                 <table class="table table-dark">
                     <thead>
                         <th>Method</th>
-                        <th>Command</th>
-                        <th>body</th>
-                        <th>requirements</th>
+                        <th>URL</th>
+                        <th>Body</th>
+                        <th>Description</th>
                     </thead>
                     <tbody>
                         <tr>
                             <td>GET</td>
-                            <td><a href="/users">/users</a></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>GET</td>
                             <td><a href="/cars">/cars</a></td>
                             <td></td>
-                            <td></td>
+                            <td>Get a list of all the cars, will present 10 results per page</td>
                         </tr>
                         <tr>
                             <td>GET</td>
                             <td><a href="/cars/?s=compact">/cars/?s=compact</a></td>
                             <td></td>
-                            <td></td>
+                            <td>search for a car or a car description, will present 10 results per page</td>
                         </tr>
                         <tr>
                             <td>GET</td>
                             <td><a href="/cars/?page=2">/cars/?page=2</a></td>
                             <td></td>
-                            <td></td>
+                            <td>Get a list of all the cars, will present 10 results in page 2</td>
                         </tr>
                         <tr>
                             <td>GET</td>
                             <td><a href="/cars/cat/chevrolet">/cars/cat/chevrolet</a></td>
                             <td></td>
-                            <td></td>
+                            <td>Get a list of all the cars in chevrolet category, will present 10 results per page</td>
                         </tr>
                         <tr>
                             <td>GET</td>
                             <td><a href="/cars/prices/?min=40000&max=55000">/cars/prices/?min=40000&max=55000</a></td>
                             <td></td>
-                            <td></td>
+                            <td>Get a list of all the cars priced between 40,000 and 55000, will present 10 results per page</td>
                         </tr>
                         <tr>
                             <td>POST</td>
@@ -79,34 +73,7 @@
 }
                             </pre>
                             </td>
-                            <td>You need a token for this query</td>
-                        </tr>
-                        <tr>
-                            <td>POST</td>
-                            <td>/users</td>
-                            <td>
-                                <pre>
-{
-    "name": "John John",
-    "email": "johnjohn@moloka.com",
-    "password": "john31kd3Fg8"
-}
-                            </pre>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>POST (login)</td>
-                            <td>/users</td>
-                            <td>
-                                <pre>
-{
-    "email": "johnjohn@moloka.com",
-    "password": "john31kd3Fg8"
-}
-                            </pre>
-                            </td>
-                            <td></td>
+                            <td>Add a new car to the data base, You need a token for this query</td>
                         </tr>
                         <tr>
                             <td>PUT</td>
@@ -122,13 +89,60 @@
 }
                             </pre>
                             </td>
-                            <td>You need a token for this query</td>
+                            <td>Update a car in the data base, You need a token for this query</td>
                         </tr>
                         <tr>
                             <td>DELETE</td>
                             <td>/cars/1</td>
                             <td></td>
-                            <td>You need a token for this query</td>
+                            <td>Delete a car from the data base, You need a token for this query</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="text-decoration-underline">Users Routes</h2>
+            <div style="overflow-x: auto;">
+                <table class="table table-dark">
+                    <thead>
+                        <th>Method</th>
+                        <th>URL</th>
+                        <th>Body</th>
+                        <th>Description</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td><a href="/users">/users</a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/users</td>
+                            <td>
+                                <pre>
+{
+"name": "John John",
+"email": "johnjohn@moloka.com",
+"password": "john31kd3Fg8"
+}
+                        </pre>
+                            </td>
+                            <td>Add a new user to the data base</td>
+                        </tr>
+                        <tr>
+                            <td>POST (login)</td>
+                            <td>/users</td>
+                            <td>
+                                <pre>
+{
+"email": "johnjohn@moloka.com",
+"password": "john31kd3Fg8"
+}
+                        </pre>
+                            </td>
+                            <td>User login, if the email and password are correct the server will respond with a token</td>
                         </tr>
                     </tbody>
                 </table>
